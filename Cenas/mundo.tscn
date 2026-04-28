@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://rjriurw4luhi"]
+
+[ext_resource type="Script" uid="uid://cpr66ptb4kkdd" path="res://Cenas/mundo.gd" id="1_j5dva"]
+[ext_resource type="Script" uid="uid://cta54legrj857" path="res://Cenas/bloco_fracao.gd" id="1_oji8i"]
+[ext_resource type="Texture2D" uid="uid://dpky6y5svpxmk" path="res://Assets/Levels/example.png" id="2_8gp82"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tn8co"]
+size = Vector2(20.5, 335)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ag4k"]
+size = Vector2(181, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osa5f"]
+size = Vector2(166.75, 120.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4kvc"]
+size = Vector2(23, 339)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjsl6"]
+size = Vector2(168.4375, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5dva"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gp82"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qboq2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvmr6"]
+size = Vector2(78, 251)
+
+[node name="mundo" type="Node2D" unique_id=477787302]
+script = ExtResource("1_j5dva")
+
+[node name="FundoDaFase" type="Sprite2D" parent="." unique_id=1590324728]
+position = Vector2(576.25, 324)
+scale = Vector2(2.373958, 2.675)
+texture = ExtResource("2_8gp82")
+
+[node name="Paredes" type="StaticBody2D" parent="." unique_id=1390213858]
+position = Vector2(14, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes" unique_id=1108246938]
+position = Vector2(607, 302)
+shape = SubResource("RectangleShape2D_tn8co")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Paredes" unique_id=757789712]
+position = Vector2(607, 302)
+shape = SubResource("RectangleShape2D_tn8co")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Paredes" unique_id=761781596]
+position = Vector2(711.5, 194.5)
+shape = SubResource("RectangleShape2D_1ag4k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Paredes" unique_id=648029624]
+position = Vector2(989.625, 195.75)
+shape = SubResource("RectangleShape2D_osa5f")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Paredes" unique_id=797089421]
+position = Vector2(1088.5, 304.5)
+shape = SubResource("RectangleShape2D_j4kvc")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Paredes" unique_id=821614006]
+position = Vector2(684, 466)
+shape = SubResource("RectangleShape2D_bjsl6")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Paredes" unique_id=2124242913]
+position = Vector2(995.21875, 466.5)
+shape = SubResource("RectangleShape2D_bjsl6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1038311504]
+position = Vector2(373, -69)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=899288701]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=90518462]
+position = Vector2(345, -22)
+shape = SubResource("RectangleShape2D_j5dva")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1439511160]
+position = Vector2(305, -55)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1684000117]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=672698026]
+position = Vector2(-19, 34)
+shape = SubResource("RectangleShape2D_8gp82")
+
+[node name="ponte" type="StaticBody2D" parent="." unique_id=1445059586]
+position = Vector2(171, -51)
+
+[node name="Sprite2D" type="Sprite2D" parent="ponte" unique_id=1324391648]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ponte" unique_id=536590389]
+position = Vector2(40, 22)
+shape = SubResource("RectangleShape2D_qboq2")
+
+[node name="BlocoFracao" type="CharacterBody2D" parent="." unique_id=1429806052]
+position = Vector2(327, 170)
+script = ExtResource("1_oji8i")
+
+[node name="Sprite2D" type="Sprite2D" parent="BlocoFracao" unique_id=1600857721]
+
+[node name="Label" type="Label" parent="BlocoFracao" unique_id=1286116245]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlocoFracao" unique_id=1074748594]
+position = Vector2(-565, -98)
+shape = SubResource("RectangleShape2D_qvmr6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

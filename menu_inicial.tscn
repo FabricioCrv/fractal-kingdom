@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bwumuof40ywpj"]
+
+[ext_resource type="Script" uid="uid://c1clu07qc7v86" path="res://menu_inicial.gd" id="1_u4fxu"]
+
+[node name="MenuInicial" type="Control" unique_id=2039194517]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4fxu")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=2142341115]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 649.0
+color = Color(0.16470589, 0.105882354, 0.30588236, 1)
+
+[node name="Titulo" type="Label" parent="." unique_id=564480964]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 111.0
+offset_right = 823.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 64
+text = "Fractal Kingdom"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoJogar" type="Button" parent="." unique_id=117645264]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 342.0
+offset_right = 720.0
+offset_bottom = 413.0
+theme_override_font_sizes/font_size = 32
+text = "JOGAR
+"
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=126110015]

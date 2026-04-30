@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cpr66ptb4kkdd" path="res://Cenas/mundo.gd" id="1_j5dva"]
 [ext_resource type="Script" uid="uid://cta54legrj857" path="res://Cenas/bloco_fracao.gd" id="1_oji8i"]
 [ext_resource type="Texture2D" uid="uid://dpky6y5svpxmk" path="res://Assets/Levels/example.png" id="2_8gp82"]
+[ext_resource type="PackedScene" uid="uid://44m4dehlkxha" path="res://Cenas/player.tscn" id="4_qboq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tn8co"]
 size = Vector2(20.5, 335)
@@ -37,7 +38,9 @@ scale = Vector2(2.373958, 2.675)
 texture = ExtResource("2_8gp82")
 
 [node name="Paredes" type="StaticBody2D" parent="." unique_id=1390213858]
-position = Vector2(14, -2)
+position = Vector2(12, -2)
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes" unique_id=1108246938]
 position = Vector2(607, 302)
@@ -107,5 +110,9 @@ offset_bottom = 23.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlocoFracao" unique_id=1074748594]
 position = Vector2(-565, -98)
 shape = SubResource("RectangleShape2D_qvmr6")
+
+[node name="Player" parent="." unique_id=1135241088 instance=ExtResource("4_qboq2")]
+position = Vector2(742, 313)
+collision_mask = 14
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

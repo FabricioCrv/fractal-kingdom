@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://44m4dehlkxha"]
 
+[ext_resource type="Script" uid="uid://bmrp6egw3l5vr" path="res://Cenas/player.gd" id="1_iersn"]
 [ext_resource type="Texture2D" uid="uid://cqtn3cwfs2823" path="res://Assets/Character/loose sprites.png" id="1_ytnb3"]
+[ext_resource type="AudioStream" uid="uid://bjtmwtpn8g7u7" path="res://Assets/undertale_sfx/snd_impact.wav" id="3_5p0qj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmvhq"]
 atlas = ExtResource("1_ytnb3")
@@ -154,6 +156,7 @@ size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D" unique_id=1135241088]
 collision_mask = 6
+script = ExtResource("1_iersn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=823767226]
 sprite_frames = SubResource("SpriteFrames_axwfv")
@@ -162,3 +165,6 @@ frame_progress = 0.16854027
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1530346647]
 shape = SubResource("RectangleShape2D_8tubf")
+
+[node name="Push" type="AudioStreamPlayer2D" parent="." unique_id=1638282320]
+stream = ExtResource("3_5p0qj")

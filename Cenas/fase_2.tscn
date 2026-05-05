@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cpf2xxmfn42cl"]
+
+[ext_resource type="Script" uid="uid://bngtry2qgq8os" path="res://Cenas/fase_2.gd" id="1_o5jdt"]
+
+[node name="fase_2" type="Node2D" unique_id=1671107657]
+script = ExtResource("1_o5jdt")

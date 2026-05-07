@@ -1,0 +1,274 @@
+[gd_scene format=3 uid="uid://cb0l6ndveim0r"]
+
+[ext_resource type="Texture2D" path="res://Assets/ui/fundo_selecao.svg" id="1_bg"]
+[ext_resource type="Texture2D" path="res://Assets/ui/card_template.svg" id="2_card"]
+[ext_resource type="Script" path="res://Cenas/selecao_fases.gd" id="3_script"]
+
+[node name="SelecaoFases" type="Control" unique_id=523428478]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_script")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=545125173]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TituloMenu" type="Label" parent="." unique_id=701532217]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 25.0
+offset_right = 400.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 32
+text = "ESCOLHA SUA AVENTURA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoVoltar" type="Button" parent="." unique_id=1400821895]
+layout_mode = 1
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 78.0
+offset_bottom = 78.0
+flat = true
+
+[node name="BotaoFase1" type="Button" parent="." unique_id=854470097]
+layout_mode = 1
+offset_left = 70.0
+offset_top = 140.0
+offset_right = 360.0
+offset_bottom = 578.0
+flat = true
+
+[node name="ImagemCard1" type="TextureRect" parent="BotaoFase1" unique_id=1247681719]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_card")
+expand_mode = 1
+
+[node name="LabelDificuldade1" type="Label" parent="BotaoFase1" unique_id=1910984837]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_font_sizes/font_size = 28
+text = "FÁCIL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelNumero1" type="Label" parent="BotaoFase1" unique_id=567324700]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 80.0
+offset_bottom = 280.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_font_sizes/font_size = 160
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelFracao1" type="Label" parent="BotaoFase1" unique_id=413506392]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 295.0
+offset_bottom = 340.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_font_sizes/font_size = 28
+text = "1/2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelJogar1" type="Label" parent="BotaoFase1" unique_id=1815793196]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 372.0
+offset_bottom = 415.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_font_sizes/font_size = 26
+text = "JOGAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoFase2" type="Button" parent="." unique_id=1915764904]
+layout_mode = 1
+offset_left = 430.0
+offset_top = 140.0
+offset_right = 720.0
+offset_bottom = 578.0
+flat = true
+
+[node name="ImagemCard2" type="TextureRect" parent="BotaoFase2" unique_id=1473890643]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_card")
+expand_mode = 1
+
+[node name="LabelDificuldade2" type="Label" parent="BotaoFase2" unique_id=2087569936]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_font_sizes/font_size = 28
+text = "MÉDIO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelNumero2" type="Label" parent="BotaoFase2" unique_id=483639216]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 80.0
+offset_bottom = 280.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_font_sizes/font_size = 160
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelFracao2" type="Label" parent="BotaoFase2" unique_id=937687519]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 295.0
+offset_bottom = 340.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_font_sizes/font_size = 28
+text = "1/4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelJogar2" type="Label" parent="BotaoFase2" unique_id=205741305]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 372.0
+offset_bottom = 415.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_font_sizes/font_size = 26
+text = "JOGAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoFase3" type="Button" parent="." unique_id=1929842316]
+layout_mode = 1
+offset_left = 790.0
+offset_top = 140.0
+offset_right = 1080.0
+offset_bottom = 578.0
+flat = true
+
+[node name="ImagemCard3" type="TextureRect" parent="BotaoFase3" unique_id=350038293]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_card")
+expand_mode = 1
+
+[node name="LabelDificuldade3" type="Label" parent="BotaoFase3" unique_id=816652017]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_font_sizes/font_size = 28
+text = "DIFÍCIL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelNumero3" type="Label" parent="BotaoFase3" unique_id=2007605703]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 80.0
+offset_bottom = 280.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_font_sizes/font_size = 160
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelFracao3" type="Label" parent="BotaoFase3" unique_id=1878426022]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 295.0
+offset_bottom = 340.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_font_sizes/font_size = 28
+text = "1/8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelJogar3" type="Label" parent="BotaoFase3" unique_id=130018973]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 372.0
+offset_bottom = 415.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_font_sizes/font_size = 26
+text = "JOGAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=207768427]
+volume_db = -8.0
+
+[connection signal="pressed" from="BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
+[connection signal="pressed" from="BotaoFase1" to="." method="_on_botao_fase_1_pressed"]
+[connection signal="pressed" from="BotaoFase2" to="." method="_on_botao_fase_2_pressed"]
+[connection signal="pressed" from="BotaoFase3" to="." method="_on_botao_fase_3_pressed"]

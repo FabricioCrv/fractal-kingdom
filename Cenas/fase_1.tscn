@@ -1,10 +1,99 @@
 [gd_scene format=3 uid="uid://dl5jgn68no6su"]
 
-[node name="fase2" type="Node2D" unique_id=1849687915]
-position = Vector2(185, 243)
+[ext_resource type="Texture2D" uid="uid://brho6ynbeemwb" path="res://Assets/Levels/Dungeon_24x24.png" id="1_hqyny"]
+[ext_resource type="PackedScene" uid="uid://44m4dehlkxha" path="res://Cenas/player.tscn" id="2_n2en6"]
+[ext_resource type="PackedScene" uid="uid://caunmrvdi7jru" path="res://Cenas/bloco_numero.tscn" id="3_nfyrq"]
+[ext_resource type="Texture2D" uid="uid://be5nwmwcqup38" path="res://Assets/numbers_Sprite_assets/1.png" id="4_vwldl"]
+[ext_resource type="Texture2D" uid="uid://c1f1vdd71wqim" path="res://Assets/numbers_Sprite_assets/2.png" id="5_ahbfq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfyrq"]
+size = Vector2(580, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwldl"]
+size = Vector2(580, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahbfq"]
+size = Vector2(20, 260)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6662"]
+size = Vector2(20, 260)
+
+[node name="Node2D" type="Node2D" unique_id=1849687915]
 
 [node name="Label" type="Label" parent="." unique_id=1742335744]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Fase 1"
-metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1076131561]
+scale = Vector2(3, 3)
+texture = ExtResource("1_hqyny")
+
+[node name="Player" parent="." unique_id=1135241088 instance=ExtResource("2_n2en6")]
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1636866002]
+limit_left = -335
+limit_top = -200
+limit_right = 235
+limit_bottom = 200
+
+[node name="BlocoNumero" parent="." unique_id=465301378 instance=ExtResource("3_nfyrq")]
+position = Vector2(-50, 50)
+
+[node name="1" type="Sprite2D" parent="BlocoNumero" unique_id=2126475647]
+position = Vector2(-4, -169)
+texture = ExtResource("4_vwldl")
+
+[node name="BlocoNumero2" parent="." unique_id=1648771463 instance=ExtResource("3_nfyrq")]
+position = Vector2(50, -80)
+
+[node name="BlocoNumero3" parent="." unique_id=622941529 instance=ExtResource("3_nfyrq")]
+position = Vector2(134, 39)
+
+[node name="2" type="Sprite2D" parent="." unique_id=1565548211]
+position = Vector2(-39, 113)
+texture = ExtResource("5_ahbfq")
+
+[node name="1" type="Sprite2D" parent="." unique_id=297103606]
+position = Vector2(-50, -20)
+texture = ExtResource("4_vwldl")
+
+[node name="BlocoNumero4" parent="." unique_id=326205820 instance=ExtResource("3_nfyrq")]
+position = Vector2(-239, 39)
+
+[node name="2" type="Sprite2D" parent="BlocoNumero4" unique_id=184894091]
+position = Vector2(50, -20)
+texture = ExtResource("5_ahbfq")
+
+[node name="WallTop" type="StaticBody2D" parent="." unique_id=458968076]
+position = Vector2(0, -108)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" unique_id=1104427649]
+shape = SubResource("RectangleShape2D_nfyrq")
+
+[node name="WallBottom" type="StaticBody2D" parent="." unique_id=1400532582]
+position = Vector2(0, 130)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom" unique_id=1769328852]
+shape = SubResource("RectangleShape2D_vwldl")
+
+[node name="WallLeft" type="StaticBody2D" parent="." unique_id=469214723]
+position = Vector2(-335, 0)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft" unique_id=404386744]
+shape = SubResource("RectangleShape2D_ahbfq")
+
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=1669255195]
+position = Vector2(235, 0)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=656066451]
+shape = SubResource("RectangleShape2D_k6662")
+
+[editable path="BlocoNumero"]
+[editable path="BlocoNumero2"]
+[editable path="BlocoNumero3"]
+[editable path="BlocoNumero4"]

@@ -1,41 +1,126 @@
-[gd_scene format=3 uid="uid://bwumuof40ywpj"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Script" uid="uid://c1clu07qc7v86" path="res://Cenas/menu_inicial.gd" id="1_u4fxu"]
+[ext_resource type="Texture2D" path="res://Assets/ui/fundo_menu.svg" id="1_bg"]
+[ext_resource type="Script" path="res://Cenas/menu_inicial.gd" id="2_script"]
 
-[node name="MenuInicial" type="Control" unique_id=2039194517]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jogar_normal"]
+bg_color = Color(1, 0.85, 0.24, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.1, 0.04, 0.19, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jogar_hover"]
+bg_color = Color(1, 0.93, 0.55, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.1, 0.04, 0.19, 1)
+
+[node name="MenuInicial" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_u4fxu")
+script = ExtResource("2_script")
 
-[node name="Fundo" type="ColorRect" parent="." unique_id=2142341115]
-layout_mode = 0
-offset_right = 1154.0
-offset_bottom = 649.0
-color = Color(0.16470589, 0.105882354, 0.30588236, 1)
+[node name="Fundo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_bg")
+expand_mode = 1
+stretch_mode = 6
 
-[node name="Titulo" type="Label" parent="." unique_id=564480964]
-layout_mode = 0
-offset_left = 321.0
-offset_top = 111.0
-offset_right = 823.0
-offset_bottom = 199.0
-theme_override_font_sizes/font_size = 64
-text = "Fractal Kingdom"
+[node name="TituloFractal" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 195.0
+offset_right = 400.0
+offset_bottom = 285.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_colors/font_shadow_color = Color(0.1, 0.04, 0.19, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_font_sizes/font_size = 72
+text = "FRACTAL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BotaoJogar" type="Button" parent="." unique_id=117645264]
-layout_mode = 0
-offset_left = 423.0
-offset_top = 342.0
-offset_right = 720.0
-offset_bottom = 413.0
-theme_override_font_sizes/font_size = 32
-text = "JOGAR
-"
+[node name="TituloKingdom" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 285.0
+offset_right = 400.0
+offset_bottom = 375.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_colors/font_shadow_color = Color(0.1, 0.04, 0.19, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_font_sizes/font_size = 72
+text = "KINGDOM"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=126110015]
+[node name="Subtitulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_top = 380.0
+offset_right = 350.0
+offset_bottom = 410.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.81, 0.8, 0.96, 1)
+theme_override_font_sizes/font_size = 18
+text = "AVENTURAS COM FRAÇÕES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoJogar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = 100.0
+offset_right = 130.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_colors/font_hover_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_colors/font_pressed_color = Color(0.1, 0.04, 0.19, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_jogar_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jogar_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jogar_normal")
+text = "JOGAR"
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="."]
+volume_db = -8.0
+autoplay = true
+
+[connection signal="pressed" from="BotaoJogar" to="." method="_on_botao_jogar_pressed"]

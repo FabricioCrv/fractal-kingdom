@@ -1,9 +1,13 @@
 extends Control
 
-@onready var botao_jogar: Button = $BotaoJogar
+# Tela inicial do Fractal Kingdom
+# Conecta o botão JOGAR à tela de seleção de fases
 
 func _ready() -> void:
-	botao_jogar.pressed.connect(_on_botao_jogar_pressed)
+	modulate = Color(1, 1, 1, 0)
+	var tween := create_tween()
+	tween.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.5)
+
 
 func _on_botao_jogar_pressed() -> void:
-	get_tree().change_scene_to_file("res://Cenas/mundo.tscn")
+	get_tree().change_scene_to_file("res://Cenas/selecao_fases.tscn")

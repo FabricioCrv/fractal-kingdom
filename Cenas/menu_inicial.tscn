@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://de37ks4b2j3wf"]
+
+[ext_resource type="Texture2D" uid="uid://bbyd6qb1xomql" path="res://Assets/ui/fundo_menu.svg" id="1_bg"]
+
+[sub_resource type="GDScript" id="GDScript_4ahfv"]
+script/source = "extends Control
+
+
+func _ready() -> void:
+	modulate = Color(1, 1, 1, 0)
+	var tween := create_tween()
+	tween.tween_property(self, \"modulate\", Color(1, 1, 1, 1), 0.5)
+
+
+func _on_botao_jogar_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Cenas/selecao_fases.tscn\")
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jogar_normal"]
+bg_color = Color(1, 0.85, 0.24, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.1, 0.04, 0.19, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jogar_hover"]
+bg_color = Color(1, 0.93, 0.55, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.1, 0.04, 0.19, 1)
+
+[node name="MenuInicial" type="Control" unique_id=281799946]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_4ahfv")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=1235976313]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TituloFractal" type="Label" parent="." unique_id=725384650]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 195.0
+offset_right = 400.0
+offset_bottom = 285.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_colors/font_shadow_color = Color(0.1, 0.04, 0.19, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_font_sizes/font_size = 72
+text = "FRACTAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TituloKingdom" type="Label" parent="." unique_id=337828480]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 285.0
+offset_right = 400.0
+offset_bottom = 375.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_colors/font_shadow_color = Color(0.1, 0.04, 0.19, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_font_sizes/font_size = 72
+text = "KINGDOM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitulo" type="Label" parent="." unique_id=375003829]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_top = 380.0
+offset_right = 350.0
+offset_bottom = 410.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.81, 0.8, 0.96, 1)
+theme_override_font_sizes/font_size = 18
+text = "AVENTURAS COM FRAÇÕES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoJogar" type="Button" parent="." unique_id=2048387014]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = 100.0
+offset_right = 130.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_colors/font_pressed_color = Color(0.1, 0.04, 0.19, 1)
+theme_override_colors/font_hover_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_jogar_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jogar_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jogar_hover")
+text = "JOGAR"
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=1496860983]
+volume_db = -8.0
+autoplay = true
+
+[connection signal="pressed" from="BotaoJogar" to="." method="_on_botao_jogar_pressed"]

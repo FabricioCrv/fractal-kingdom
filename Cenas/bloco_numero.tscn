@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://up4f54curavq"]
+
+[ext_resource type="Script" uid="uid://5dx2nyiwlfnb" path="res://bloco_numero.gd" id="1_q5yro"]
+[ext_resource type="Texture2D" uid="uid://cao1veg6qic15" path="res://Assets/numbers_Sprite_assets/0.png" id="2_erxso"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fk6tw"]
+size = Vector2(64, 64)
+
+[node name="BlocoNumero" type="StaticBody2D" unique_id=465301378]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_q5yro")
+maxPushes = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1876150052]
+texture = ExtResource("2_erxso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1983728072]
+shape = SubResource("RectangleShape2D_fk6tw")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=546637818]
+target_position = Vector2(0, 49)
+collision_mask = 4

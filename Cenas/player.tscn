@@ -171,6 +171,7 @@ shape = SubResource("RectangleShape2D_8tubf")
 stream = ExtResource("3_5p0qj")
 
 [node name="InteractionTimer" type="Timer" parent="." unique_id=297860698]
+wait_time = 0.5
 one_shot = true
 
 [connection signal="timeout" from="InteractionTimer" to="." method="_on_interaction_timer_timeout"]

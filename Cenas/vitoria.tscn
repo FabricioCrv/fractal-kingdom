@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://cpox6cpffsp76"]
+
+[ext_resource type="Texture2D" uid="uid://cbkylhd1xnskl" path="res://Assets/ui/fundo_vitoria.svg" id="1_bg"]
+[ext_resource type="Script" uid="uid://jv61tb70fp6h" path="res://Cenas/vitoria.gd" id="2_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_normal"]
+bg_color = Color(0.24, 0.12, 0.4, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.85, 0.24, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_hover"]
+bg_color = Color(0.36, 0.18, 0.56, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.93, 0.55, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prox_normal"]
+bg_color = Color(1, 0.85, 0.24, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.1, 0.04, 0.19, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prox_hover"]
+bg_color = Color(1, 0.93, 0.55, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.1, 0.04, 0.19, 1)
+
+[node name="Vitoria" type="Control" unique_id=949577697]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_script")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=232385185]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="EstrelaGrande" type="Label" parent="." unique_id=1327722075]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 80.0
+offset_right = 100.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_colors/font_shadow_color = Color(0.1, 0.04, 0.19, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 110
+text = "★"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TituloFase" type="Label" parent="." unique_id=1066303526]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 230.0
+offset_right = 400.0
+offset_bottom = 290.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_colors/font_shadow_color = Color(0.1, 0.04, 0.19, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 44
+text = "FASE "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubtituloCompleta" type="Label" parent="." unique_id=177317999]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 290.0
+offset_right = 400.0
+offset_bottom = 340.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.93, 0.55, 1)
+theme_override_colors/font_shadow_color = Color(0.1, 0.04, 0.19, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 34
+text = "COMPLETA!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FraseTematica" type="Label" parent="." unique_id=1164702485]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -450.0
+offset_top = 350.0
+offset_right = 450.0
+offset_bottom = 390.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.81, 0.8, 0.96, 1)
+theme_override_font_sizes/font_size = 18
+text = "Você restaurou mais um fragmento de Numeria!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoMenu" type="Button" parent="." unique_id=1949575805]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = 90.0
+offset_right = -30.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.85, 0.24, 1)
+theme_override_colors/font_hover_color = Color(1, 0.93, 0.55, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_menu_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_menu_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_menu_hover")
+text = "MENU"
+
+[node name="BotaoProxima" type="Button" parent="." unique_id=776595358]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = 90.0
+offset_right = 310.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_colors/font_pressed_color = Color(0.1, 0.04, 0.19, 1)
+theme_override_colors/font_hover_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_prox_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_prox_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_prox_hover")
+text = "PRÓXIMA FASE"
+
+[connection signal="pressed" from="BotaoMenu" to="." method="_on_botao_menu_pressed"]
+[connection signal="pressed" from="BotaoProxima" to="." method="_on_botao_proxima_pressed"]

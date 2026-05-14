@@ -1,8 +1,5 @@
 extends Control
 
-# Tela inicial do Fractal Kingdom
-# Conecta o botão JOGAR à tela de seleção de fases
-
 func _ready() -> void:
 	modulate = Color(1, 1, 1, 0)
 	var tween := create_tween()
@@ -10,4 +7,4 @@ func _ready() -> void:
 
 
 func _on_botao_jogar_pressed() -> void:
-	get_tree().change_scene_to_file("res://Cenas/selecao_fases.tscn")
+	get_tree().change_scene_to_file("res://Cenas/intro.tscn")

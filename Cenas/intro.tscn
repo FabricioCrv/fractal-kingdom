@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://nm03c4fda8ck"]
+
+[ext_resource type="Texture2D" uid="uid://dpxeiisvi6pmj" path="res://Assets/ui/fundo_intro.svg" id="1_bg"]
+[ext_resource type="Texture2D" uid="uid://cmq58jnvd84nn" path="res://Assets/ui/pixel_personagem.svg" id="2_pixel"]
+[ext_resource type="Script" uid="uid://clfbj2fangh2l" path="res://Cenas/intro.gd" id="3_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_normal"]
+bg_color = Color(1, 0.85, 0.24, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.1, 0.04, 0.19, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+bg_color = Color(1, 0.93, 0.55, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.1, 0.04, 0.19, 1)
+
+[node name="Intro" type="Control" unique_id=35954954]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_script")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=466248699]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Titulo" type="Label" parent="." unique_id=638800089]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 25.0
+offset_right = 400.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 32
+text = "A MISSÃO DE PIXEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pixel" type="TextureRect" parent="." unique_id=675435612]
+layout_mode = 1
+offset_left = 93.0
+offset_top = 111.0
+offset_right = 293.0
+offset_bottom = 371.0
+mouse_filter = 2
+texture = ExtResource("2_pixel")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextoNarrativa" type="Label" parent="." unique_id=7589680]
+layout_mode = 1
+offset_left = 320.0
+offset_top = 150.0
+offset_right = 1060.0
+offset_bottom = 360.0
+theme_override_colors/font_color = Color(0.81, 0.8, 0.96, 1)
+theme_override_constants/line_spacing = 10
+theme_override_font_sizes/font_size = 20
+text = "O reino de Numeria se quebrou! As frações se soltaram de seus lugares e o mundo ficou instável.
+
+Você é o Pixel, o jovem aprendiz escolhido para percorrer os fragmentos do reino e reconstruir o Equilíbrio Fracionário."
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TituloComoJogar" type="Label" parent="." unique_id=1673182142]
+layout_mode = 1
+offset_left = 90.0
+offset_top = 400.0
+offset_right = 500.0
+offset_bottom = 440.0
+theme_override_colors/font_color = Color(1, 0.85, 0.24, 1)
+theme_override_font_sizes/font_size = 24
+text = "COMO JOGAR:"
+vertical_alignment = 1
+
+[node name="Passo1" type="Label" parent="." unique_id=1561375078]
+layout_mode = 1
+offset_left = 120.0
+offset_top = 450.0
+offset_right = 1060.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(0.81, 0.8, 0.96, 1)
+theme_override_font_sizes/font_size = 18
+text = "1.  Arraste os blocos de fração para os slots da fase"
+vertical_alignment = 1
+
+[node name="Passo2" type="Label" parent="." unique_id=756341126]
+layout_mode = 1
+offset_left = 120.0
+offset_top = 490.0
+offset_right = 1060.0
+offset_bottom = 525.0
+theme_override_colors/font_color = Color(0.81, 0.8, 0.96, 1)
+theme_override_font_sizes/font_size = 18
+text = "2.  Monte igualdades corretas, como 2/4 = 1/2"
+vertical_alignment = 1
+
+[node name="Passo3" type="Label" parent="." unique_id=49260218]
+layout_mode = 1
+offset_left = 120.0
+offset_top = 530.0
+offset_right = 1060.0
+offset_bottom = 565.0
+theme_override_colors/font_color = Color(0.81, 0.8, 0.96, 1)
+theme_override_font_sizes/font_size = 18
+text = "3.  Abra caminhos no cenário e restaure o reino de Numeria!"
+vertical_alignment = 1
+
+[node name="BotaoComecar" type="Button" parent="." unique_id=1256100901]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 162.0
+offset_top = -191.0
+offset_right = 462.0
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_colors/font_pressed_color = Color(0.1, 0.04, 0.19, 1)
+theme_override_colors/font_hover_color = Color(0.16, 0.08, 0.28, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+text = "COMEÇAR"
+
+[connection signal="pressed" from="BotaoComecar" to="." method="_on_botao_comecar_pressed"]

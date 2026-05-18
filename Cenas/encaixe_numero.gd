@@ -1,19 +1,15 @@
 extends Area2D
 class_name EncaixeNumero
 
-## Número esperado neste encaixe (ex: 3 para o numerador, 4 para o denominador)
 @export var numero_esperado: int = 0
  
-## AudioStreamPlayer2D para o som de encaixe
-@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audio_encaixe: AudioStreamPlayer2D = $AudioEncaixe
+@onready var audio_erro: AudioStreamPlayer2D = $AudioErro
  
-## Sprite ou nó visual do encaixe (anel/contorno)
 @onready var sprite_encaixe: Sprite2D = $SpriteEncaixe
  
-## Label que mostra o número esperado no cenário
 @onready var label_esperado: Label = $NumeroEsperado
  
-## Se o encaixe já está preenchido
 var esta_preenchido: bool = false
  
 ## Referência ao bloco que está encaixado
@@ -41,6 +37,8 @@ func verificar_bloco_proximo(bloco: BlocoNumero) -> void:
 	# Checa se o valor do bloco bate com o esperado
 	if bloco.get("valor") == numero_esperado:
 		_encaixar(bloco)
+	else:
+		audio_erro.play()
  
  
 ## Lógica de encaixe bem-sucedido
@@ -54,8 +52,8 @@ func _encaixar(bloco: BlocoNumero) -> void:
 	tween.tween_property(bloco, "global_position", global_position, 0.15)
  
 	# Som de encaixe
-	if audio_player and audio_player.stream:
-		audio_player.play()
+	if audio_encaixe and audio_encaixe.stream:
+		audio_encaixe.play()
  
 	# Esconde o label de dica
 	label_esperado.visible = false

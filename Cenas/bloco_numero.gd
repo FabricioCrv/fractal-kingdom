@@ -1,7 +1,9 @@
 extends StaticBody2D
+
 class_name BlocoNumero
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
+@onready var sprite: Sprite2D = $Sprite2D 
 
 ## Valor numérico deste bloco (ex: 3 para o numerador "3")
 @export var valor: int = 0
@@ -10,11 +12,28 @@ class_name BlocoNumero
 @export var maxPushes := -1
 var currentPushCount = 0
 
+const TEXTURAS_NUMEROS = {
+	0: preload("res://Assets/numbers_Sprite_assets/0.png"),
+	1: preload("res://Assets/numbers_Sprite_assets/1.png"),
+	2: preload("res://Assets/numbers_Sprite_assets/2.png"),
+	3: preload("res://Assets/numbers_Sprite_assets/3.png"),
+	4: preload("res://Assets/numbers_Sprite_assets/4.png"),
+	5: preload("res://Assets/numbers_Sprite_assets/5.png"),
+	6: preload("res://Assets/numbers_Sprite_assets/6.png"),
+	7: preload("res://Assets/numbers_Sprite_assets/7.png"),
+	8: preload("res://Assets/numbers_Sprite_assets/8.png"),
+	9: preload("res://Assets/numbers_Sprite_assets/9.png")
+}
 
 func _ready() -> void:
 	ray_cast_2d.enabled = pushable
+	_atualizar_sprite()
 
 
+func _atualizar_sprite() -> void:
+	if TEXTURAS_NUMEROS.has(valor):
+		sprite.texture = TEXTURAS_NUMEROS[valor]
+		
 func push_block(direction):
 	ray_cast_2d.target_position = direction * 25
 	ray_cast_2d.force_raycast_update()

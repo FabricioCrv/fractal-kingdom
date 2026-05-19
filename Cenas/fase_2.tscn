@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b1hk44o08nt6f" path="res://Assets/Levels/usables.png" id="5_mvsrr"]
 [ext_resource type="PackedScene" uid="uid://44m4dehlkxha" path="res://Cenas/player.tscn" id="6_jf64f"]
 [ext_resource type="PackedScene" uid="uid://caunmrvdi7jru" path="res://Cenas/bloco_numero.tscn" id="7_0v05o"]
+[ext_resource type="PackedScene" uid="uid://q25d7l7tdxj8" path="res://Cenas/encaixe_numero.tscn" id="8_ev8p6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f7siq"]
 texture = ExtResource("1_41ryc")
@@ -13392,6 +13393,45 @@ sources/2 = SubResource("TileSetAtlasSource_41b7u")
 sources/3 = SubResource("TileSetAtlasSource_csihj")
 sources/4 = SubResource("TileSetAtlasSource_ymtww")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v05o"]
+size = Vector2(553, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ev8p6"]
+size = Vector2(18, 199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvsrr"]
+size = Vector2(80.5, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7siq"]
+size = Vector2(254, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7qfa"]
+size = Vector2(161, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41b7u"]
+size = Vector2(20, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csihj"]
+size = Vector2(16, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymtww"]
+size = Vector2(16, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0tsi"]
+size = Vector2(49, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueqr2"]
+size = Vector2(14, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imh4f"]
+size = Vector2(183, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wno4v"]
+size = Vector2(22, 359)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_auht4"]
+size = Vector2(51, 54)
+
 [node name="fase_2" type="Node2D" unique_id=1671107657]
 position = Vector2(23, 309)
 
@@ -13420,6 +13460,78 @@ text = "Parabéns, você alcançou "
 
 [node name="Player" parent="." unique_id=1135241088 instance=ExtResource("6_jf64f")]
 position = Vector2(47, -189)
+scale = Vector2(1, 1)
 
 [node name="BlocoNumero" parent="." unique_id=465301378 instance=ExtResource("7_0v05o")]
-position = Vector2(111, -216)
+position = Vector2(98, -201)
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1997554586]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=1520623094]
+position = Vector2(277.5, -285)
+shape = SubResource("RectangleShape2D_0v05o")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls" unique_id=454061712]
+position = Vector2(-7, -211.5)
+shape = SubResource("RectangleShape2D_ev8p6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls" unique_id=588050541]
+position = Vector2(30.75, -53.5)
+shape = SubResource("RectangleShape2D_mvsrr")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls" unique_id=512457872]
+position = Vector2(263, -92)
+shape = SubResource("RectangleShape2D_f7siq")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls" unique_id=688922549]
+position = Vector2(70.5, 0)
+shape = SubResource("RectangleShape2D_o7qfa")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls" unique_id=1740676128]
+position = Vector2(402, -30)
+shape = SubResource("RectangleShape2D_41b7u")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls" unique_id=689777889]
+position = Vector2(393, -80)
+shape = SubResource("RectangleShape2D_csihj")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls" unique_id=249312484]
+position = Vector2(473, -79.5)
+shape = SubResource("RectangleShape2D_ymtww")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls" unique_id=1360392977]
+position = Vector2(523, -207)
+shape = SubResource("RectangleShape2D_i0tsi")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls" unique_id=1235207979]
+position = Vector2(493, -144)
+shape = SubResource("RectangleShape2D_i0tsi")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls" unique_id=306779681]
+position = Vector2(538, -81)
+shape = SubResource("RectangleShape2D_i0tsi")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls" unique_id=1167009532]
+position = Vector2(513, -15)
+shape = SubResource("RectangleShape2D_i0tsi")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Walls" unique_id=847514278]
+position = Vector2(380, 46)
+shape = SubResource("RectangleShape2D_ueqr2")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Walls" unique_id=41635187]
+position = Vector2(471.5, 94)
+shape = SubResource("RectangleShape2D_imh4f")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Walls" unique_id=572506585]
+position = Vector2(566, -123)
+shape = SubResource("RectangleShape2D_wno4v")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Walls" unique_id=774126937]
+position = Vector2(553, 56)
+shape = SubResource("RectangleShape2D_auht4")
+
+[node name="EncaixeNumero" parent="." unique_id=998002221 instance=ExtResource("8_ev8p6")]
+position = Vector2(173, -228)

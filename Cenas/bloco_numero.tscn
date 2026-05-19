@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://caunmrvdi7jru"]
 
-[ext_resource type="Script" uid="uid://5dx2nyiwlfnb" path="res://bloco_numero.gd" id="1_q5yro"]
+[ext_resource type="Script" uid="uid://5dx2nyiwlfnb" path="res://Cenas/bloco_numero.gd" id="1_q5yro"]
 [ext_resource type="Texture2D" uid="uid://cao1veg6qic15" path="res://Assets/numbers_Sprite_assets/0.png" id="2_erxso"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fk6tw"]
 size = Vector2(64, 64)
 
 [node name="BlocoNumero" type="StaticBody2D" unique_id=465301378]
+scale = Vector2(0.5, 0.5)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_q5yro")
